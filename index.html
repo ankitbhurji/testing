@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 1500px;
+            background-color: gray;
+            display: grid;
+            margin: 50px auto 0;
+
+            display: grid;
+            /* grid-template-rows: 120px; */
+            grid-template-columns: 0.5fr 1fr;
+        }
+
+        .header{
+            background-color: pink;
+            grid-column: 1/-1;
+            padding: 20px 0 20px 20px;
+        }
+        .col1{
+            background-color: aqua;
+            position: sticky;
+            padding: 10px 0px 0px 20px;
+            
+        }
+        .col2{
+            background-color: greenyellow;
+
+        }
+        .subcol{
+            /* background-color: green; */
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        .colors{
+            display: flex;
+        }
+        input[type='search']{
+            width: 50%;
+        }
+        .subcol2container{
+            display: flex;
+        }
+        .item{
+            background-color: blueviolet;
+            width: 25%;
+            margin-right: 10px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">header</div>
+        <div class="col1">col-1
+            <div class="subcol">
+                <input type="search">
+            </div>
+            <div class="subcol">
+                <label>Category</label><br/>
+                <select>
+                    <option>one</option>
+                    <option>two</option>
+                    <option>three</option>
+                    <option>four</option>
+                </select>
+            </div>
+            <div class="subcol">
+                <label>Color</label><br/>
+                <div class="colors">
+                    <div>one</div>
+                    <div>two</div>
+                    <div>three</div>
+                    <div>four</div>
+                    <div>five</div>
+                    <div>six</div>
+                </div>
+            </div>
+            <div class="subcol">
+                <label>Price</label><br/>
+                 <label>$500</label><br/>
+                 <input type="range">
+            </div>
+            <div class="subcol">
+                <label>freeshipping</label>
+                <input type="checkbox">
+            </div>
+            
+        </div>
+        <div class="col2">
+            <div class="subcol2container">
+                <div class="item">one</div>
+                <div class="item">one</div>
+                <div class="item">one</div>
+                <div class="item">one</div>
+                <div class="item">one</div>
+                <div class="item">one</div>
+                <div class="item">one</div>
+                <div class="item">one</div>
+                <div class="item">one</div>
+                <div class="item">one</div>
+                <div class="item">one</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
