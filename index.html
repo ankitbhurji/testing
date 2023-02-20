@@ -7,14 +7,14 @@
     <title>Document</title>
     <style>
         .container{
-            width: 1500px;
+            /* width:100%; */
             background-color: gray;
             display: grid;
-            margin: 50px auto 0;
+            margin: 0px auto 0;
 
             display: grid;
             /* grid-template-rows: 120px; */
-            grid-template-columns: 0.5fr 1fr;
+            grid-template-columns: 0.4fr 1fr;
         }
 
         .header{
@@ -24,12 +24,22 @@
         }
         .col1{
             background-color: aqua;
-            position: sticky;
             padding: 10px 0px 0px 20px;
+
             
+        }
+        .col1-sticky{
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            /* width: 500px; */
+            background-color: yellow;
+            /* padding: 50px; */
+            font-size: 20px;
         }
         .col2{
             background-color: greenyellow;
+            width: 100%;
 
         }
         .subcol{
@@ -37,33 +47,136 @@
             width: 100%;
             margin-bottom: 10px;
         }
+        input[type='search']{
+            width: 180px;
+            padding: 5px;
+        }
+        .category{
+            height: 150px;
+            overflow: auto;
+        }
+        .company{
+            width: 180px;
+        }
         .colors{
             display: flex;
         }
-        input[type='search']{
-            width: 50%;
+        .color{
+            background: #FF7A59;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-right: 4px;
+        }
+        .topbar-container{
+            background-color: maroon;
+            display: grid;
+            grid-template-rows: 80px;
+            margin: 0 10px 0 10px;
+        }
+        .topbar{
+            display: flex;
+            justify-content:space-between;
+        }
+        .line{
+            width: 60%;
+            border-top: 5px solid red;
+        }
+        .icon{
+            display: flex;
         }
         .subcol2container{
+            display: grid;
+            /* grid-template-rows: 220px 220px; */
+            grid-template-columns: repeat(3, 1fr);
+            /* grid-gap: 10px; */
+            grid-column-gap: 15px;
+            grid-row-gap: 10px;
+            margin: 0 10px 0 10px;
+        }
+        .subcol2list-container{
+           display: grid;
+           grid-template-columns: repeat(3, 1fr);
+           /* grid-template-columns: 580px 1fr; */
+           margin: 0 10px 0 10px;
+           grid-gap: 10px;
+        }
+        .list-item{
+            background-color: #FF7A59;
             display: flex;
+            width: 100%;
+        }
+        .list-item2{
+            background-color: red;
+            grid-column: 2/span 3;
+            /* margin-left: 10px; */
+        }
+        .list-item3{
+            background-color: rgb(115, 58, 58);
+        }
+        .list-info{
+            /* width: 100%; */
+        }
+        .list-info{
+            margin: 10px 0 20px 0;
+            /* padding: 30px  0 0 20px; */
+        }
+        .discription{
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3; /* number of lines to show */
+            line-clamp: 3;
+            -webkit-box-orient: vertical;
         }
         .item{
             background-color: blueviolet;
-            width: 25%;
-            margin-right: 10px;
+            /* margin-right: 100px; */
+            /* width: 340px; */
         }
-        
+        .item-info{
+            display: flex;
+            justify-content: space-between;
+        }
+        img {
+        width: 100%;
+        height: auto;
+        /* min-height: 200px; */
+        }
+        .listImage{
+            min-height: 150px;
+        }
+        p{
+            margin: 0;
+            padding: 0;
+        }
+                
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">header</div>
-        <div class="col1">col-1
+        <div class="col1">
+            <div class="col1-sticky">
             <div class="subcol">
                 <input type="search">
             </div>
             <div class="subcol">
-                <label>Category</label><br/>
-                <select>
+                <label>Category</label>
+                <div class="category">
+                    <div>cat-1</div>
+                    <div>cat-2</div>
+                    <div>cat-3</div>
+                    <div>cat-4</div>
+                    <div>cat-5</div>
+                    <div>cat-6</div>
+                    <div>cat-7</div>
+                    <div>cat-8</div>
+                </div>
+            </div>
+            <div class="subcol">
+                <label>Company</label><br/>
+                <select class="company">
                     <option>one</option>
                     <option>two</option>
                     <option>three</option>
@@ -73,12 +186,13 @@
             <div class="subcol">
                 <label>Color</label><br/>
                 <div class="colors">
-                    <div>one</div>
-                    <div>two</div>
-                    <div>three</div>
-                    <div>four</div>
-                    <div>five</div>
-                    <div>six</div>
+                    <div class="">all</div>
+                    <div class="color"></div>
+                    <div class="color"></div>
+                    <div class="color"></div>
+                    <div class="color"></div>
+                    <div class="color"></div>
+                    <div class="color"></div>
                 </div>
             </div>
             <div class="subcol">
@@ -90,21 +204,174 @@
                 <label>freeshipping</label>
                 <input type="checkbox">
             </div>
-            
+            <div class="subcol">
+                <button>clear filters</button>
+            </div>
+            </div>
         </div>
         <div class="col2">
+            <div class="topbar-container">
+                <div class="topbar">
+                    <div class="icon">
+                        <div>icon1</div>
+                        <div>icon2</div>
+                    </div>
+                    <div class="prouct-count">
+                        25 product found
+                    </div>
+                    <div class="line"></div>
+                    <div class="product-short">
+                        <select>
+                            <option>on</option>
+                            <option>on</option>
+                            <option>on</option>
+                            <option>on</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
             <div class="subcol2container">
-                <div class="item">one</div>
-                <div class="item">one</div>
-                <div class="item">one</div>
-                <div class="item">one</div>
-                <div class="item">one</div>
-                <div class="item">one</div>
-                <div class="item">one</div>
-                <div class="item">one</div>
-                <div class="item">one</div>
-                <div class="item">one</div>
-                <div class="item">one</div>
+                <div class="item ">
+                    <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg" height="" width="" alt="">
+                    <div class="item-info">
+                        <div class="item-name">name</div>
+                        <div class="item-price">price</div>
+                    </div>
+                </div>
+
+                <!-- <div class="item ">
+                    <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg" height="200px" width="340px" alt="">
+                    <div class="item-info">
+                        <div class="item-name">name</div>
+                        <div class="item-price">price</div>
+                    </div>
+                </div>
+                <div class="item ">
+                    <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg" height="200px" width="340px" alt="">
+                    <div class="item-info">
+                        <div class="item-name">name</div>
+                        <div class="item-price">price</div>
+                    </div>
+                </div>
+                <div class="item ">
+                    <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg" height="200px" width="340px" alt="">
+                    <div class="item-info">
+                        <div class="item-name">name</div>
+                        <div class="item-price">price</div>
+                    </div>
+                </div>
+                <div class="item ">
+                    <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg" height="200px" width="340px" alt="">
+                    <div class="item-info">
+                        <div class="item-name">name</div>
+                        <div class="item-price">price</div>
+                    </div>
+                </div>
+                <div class="item ">
+                    <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg" height="200px" width="340px" alt="">
+                    <div class="item-info">
+                        <div class="item-name">name</div>
+                        <div class="item-price">price</div>
+                    </div>
+                </div>
+                <div class="item ">
+                    <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg" height="200px" width="340px" alt="">
+                    <div class="item-info">
+                        <div class="item-name">name</div>
+                        <div class="item-price">price</div>
+                    </div>
+                </div>
+                <div class="item ">
+                    <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg" height="200px" width="340px" alt="">
+                    <div class="item-info">
+                        <div class="item-name">name</div>
+                        <div class="item-price">price</div>
+                    </div>
+                </div>
+                <div class="item ">
+                    <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg" height="200px" width="340px" alt="">
+                    <div class="item-info">
+                        <div class="item-name">name</div>
+                        <div class="item-price">price</div>
+                    </div>
+                </div>
+                <div class="item ">
+                    <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg" height="200px" width="340px" alt="">
+                    <div class="item-info">
+                        <div class="item-name">name</div>
+                        <div class="item-price">price</div>
+                    </div>
+                </div>
+                <div class="item ">
+                    <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg" height="200px" width="340px" alt="">
+                    <div class="item-info">
+                        <div class="item-name">name</div>
+                        <div class="item-price">price</div>
+                    </div>
+                </div>
+                <div class="item ">
+                    <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg" height="200px" width="340px" alt="">
+                    <div class="item-info">
+                        <div class="item-name">name</div>
+                        <div class="item-price">price</div>
+                    </div>
+                </div> -->
+            
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+            </div>
+            
+            <div class="subcol2list-container">
+                <div class="list-item">
+                    <img class="listImage" src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg" height="" width="" alt="">
+                </div>
+                <div class="list-item2">
+                    <div class="list-info">
+                        <p>name</p>
+                        <p>price</p>
+                        <p class="discription">of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+                        <button>details</button>
+                    </div>
+                </div>
+
+                <div class="list-item">
+                    <img class="listImage" src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg" height="" width="" alt="">
+                </div>
+                <div class="list-item2">
+                    <div class="list-info">
+                        <p>name</p>
+                        <p>price</p>
+                        <p class="discription">of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+                        <button>details</button>
+                    </div>
+                </div>
+
+                <div class="list-item">
+                    <img class="listImage" src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg" height="" width="" alt="">
+                </div>
+                <div class="list-item2">
+                    <div class="list-info">
+                        <p>name</p>
+                        <p>price</p>
+                        <p class="discription">of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+                        <button>details</button>
+                    </div>
+                </div>
+
+                <div class="list-item">
+                    <img class="listImage" src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg" height="" width="" alt="">
+                </div>
+                <div class="list-item2">
+                    <div class="list-info">
+                        <p>name</p>
+                        <p>price</p>
+                        <p class="discription">of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+                        <button>details</button>
+                    </div>
+                </div>
+                <!-- <div class="list-item3">
+                </div> -->
             </div>
         </div>
     </div>
